@@ -32,7 +32,7 @@ int listempty(link *k)
 	if(k->length==0)
 	    return 1;
 	else
-		return 0;
+	    return 0;
 }
 //返回顺序表的当前长度
 int listlength(link k)
@@ -48,7 +48,7 @@ int getelem(link k,int i)
 		exit(0);
 	}
 	else {
-			return k.base[i-1];
+		return k.base[i-1];
 	}
 }
 int priorelem(link k,int prior)
