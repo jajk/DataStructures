@@ -26,7 +26,7 @@ int listempty(link *k)
 }
 int listlength(link *head)
 {
-	eturn head->length;
+	return head->length;
 }
 int getelem(link *head,int i)
 {
