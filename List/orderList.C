@@ -19,14 +19,14 @@ void inital(link *k)
 	k->length=0;
 	k->sum_length=100;
 }
-//重置并清空顺序表k
+//清空并重置顺序表k
 void destroy(link *k)
 {
 	free(k->base);
 	k->length=0;
 	k->sum_length=0;
 }
-//判断顺序表是否为空
+//判断顺序表是否为空；为空返回1，否则返回0
 int listempty(link *k)
 {
 	if(k->length==0)
@@ -39,41 +39,46 @@ int listlength(link k)
 {
 	return k.length;
 }
-//得到指定元素
-int getelem(link k,int i)
+//根据i，得到指定元素
+int getelem(link k, int i)
 {
-	if(i>k.length)
+	if(i > k.length)
 	{
 		printf("exceed!!");
 		exit(0);
 	}
-	else {
+	else 
+	{
 		return k.base[i-1];
 	}
 }
+//获取指定元素的先驱（前一个）元素
 int priorelem(link k,int prior)
 {
-	if(prior==1)
+	if(prior == 1)
 	{
 		printf("No prior :because prior=1");
 		return 0;
 	}
-	else if(prior>k.length)
+	else if(prior > k.length)
 	{
 		printf("exceed!!");
 		return 0;
 	}
 	else
-		return k.base[prior-2];
+	{
+		return k.base[prior-2];	
+	}
 }
+//获取指定元素的下一个元素
 int nextelem(link k,int next)
 {
-	if(next==k.length)
+	if(next == k.length)
 	{
 		printf("NO next elem:because next=length!");
 		return 0;
 	}
-	else if(next>k.length)
+	else if(next > k.length)
 	{
 		printf("exceed!!");
 		exit(0);
@@ -83,18 +88,19 @@ int nextelem(link k,int next)
 		return k.base[next];
 	}
 }
+//在指定位置插入元素
 void listInsert(link *k,int i,int element)
 {
 	int *newbase;
-	int n;
+	int n = i;
 	if(listempty(k)==0)
-	{
-		if(k->length>=k->sum_length)
+	{       //如果空间不够，申请存储空间
+		if(k->length >= k->sum_length)
 		{
 			newbase=(int *)realloc(k->base,(k->sum_length+increment)*sizeof(int));
 			if(newbase!=NULL)
 			{
-				k->base=newbase;
+				k->base = newbase;
 				k->sum_length+=increment;
 			}
 			else
@@ -116,6 +122,7 @@ void listInsert(link *k,int i,int element)
 		k->length=1;
 	}
 }
+//删除指定位置的元素
 void  listdelect(link *k,int n)
 {
 	int i;
