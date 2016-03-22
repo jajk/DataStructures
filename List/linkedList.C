@@ -1,11 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
+//构建链表数据结构
 typedef struct link
 {
 	struct link *next;
 	int element;
 	int length;
 }link;
+//清空并重置链表
 void destroy(link *head)
 {
 	link *q;
@@ -17,6 +19,7 @@ void destroy(link *head)
 	}
 	printf("already delect the link!!");
 }
+//判断链表是否为空，为空返回1，否则返回0
 int listempty(link *k)
 {
 	if(k==NULL)
@@ -24,10 +27,12 @@ int listempty(link *k)
 	else
 		return 0;
 }
+//返回链表的长度
 int listlength(link *head)
 {
 	return head->length;
 }
+//得到指定位置的元素
 int getelem(link *head,int i)
 {
 	int count;
@@ -43,7 +48,8 @@ int getelem(link *head,int i)
 	else
 		return head->element;
 }
-int priorelement(link *head,int prior)/*if define link have length will be better*/
+//得到指定元素的前一个元素
+int priorelement(link *head,int prior)
 {
 	int i;
 	for(i=1;i<prior;i++)
@@ -60,7 +66,8 @@ int priorelement(link *head,int prior)/*if define link have length will be bette
 		return head->element;
 	}
 }
-int nextelement(link *head,int next)/*if define link have length will be better!!*/
+//得到指定元素的后一个元素
+int nextelement(link *head,int next)
 {
 	int i;
 	for(i=1;i<=next+1;i++)
@@ -68,6 +75,7 @@ int nextelement(link *head,int next)/*if define link have length will be better!
 		head=head->next;
 	}
 }
+//在指定位置插入链表元素
 void listinsert(link *head,int i,link *u)
 {
 	int count;
@@ -82,6 +90,7 @@ void listinsert(link *head,int i,link *u)
 	q->next=u;
 	u->next=p;
 }
+//删除指定位置的元素
 void listdelect(link *head,int i)
 {
 	int count;
@@ -96,6 +105,7 @@ void listdelect(link *head,int i)
 	q->next=p->next;
 	free(p);
 }
+//创建一个指定多少个元素的链表
 void creat1(link *head,int number)
 {
 	int count;
@@ -117,6 +127,7 @@ void creat1(link *head,int number)
 	}
 	p->next=NULL;
 }
+//创建一个指定多少个元素的链表
 void create2(link *head,int number)
 {
 	int count;
