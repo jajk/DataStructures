@@ -1,16 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 typedef struct link
 {
 	struct link *next;
 	int element;
 }link;
+//构建循环列表数据结构
 typedef struct h
 {
 	link *head;
 	link *tail;
 	int length;
 }h;
+//创建循环列表,number为指定个数
 void create(h *c,int number)
 {
 	int count;
@@ -43,6 +46,7 @@ void create(h *c,int number)
 	p->next=c->head;
 	c->tail=p;
 }
+//输出循环链表的信息
 void print(link *h,int number)
 {
 	int count;
