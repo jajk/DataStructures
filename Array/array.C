@@ -68,5 +68,5 @@ main()
 	printf("hello\n");
 	m=initalArray(&a,2,b);
 	if(m==1)
-		put_value(&a);
+	put_value(&a);
 }
