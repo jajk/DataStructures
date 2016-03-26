@@ -7,7 +7,7 @@ This 'Data_Structures's folder contains 5 contents:
 
 2、Stack,this stand for orderstack and linked stack;
 
-3、Array,this stand for array stack;
+3、Array,this stand for array structur;
 
 4、Tree,this means tree structur;
 
