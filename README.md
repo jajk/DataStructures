@@ -1,4 +1,4 @@
-# Data_Structures
+# DataStructures
 Reviewing the "Data Structures" in C
 
 This 'Data_Structures's folder contains 5 contents:
